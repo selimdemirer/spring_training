@@ -38,6 +38,6 @@ public class AddressDTO {
     @JsonBackReference(value = "teacher-address-reference") // defaultReference
     private TeacherDTO teacher;
 
-    private Integer currentTemperature; // Weather info, which we will later get it from 3rd party API
+    private Integer currentTemperature; // Weather info, which we will later get it from 3rd party API // access_key:9498985ce614f05957adf71593a40cdd
 
 }
