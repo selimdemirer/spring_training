@@ -11,8 +11,8 @@
     <groupId>com.cydeo</groupId>
     <artifactId>Spring-19-REST-OpenAPI3</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-18-REST-OpenAPI3</name>
-    <description>Spring-18-REST-OpenAPI3</description>
+    <name>Spring-19-REST-OpenAPI3</name>
+    <description>Spring-19-REST-OpenAPI3</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -29,6 +29,11 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.14.0</version>
         </dependency>
         <dependency>
             <groupId>org.modelmapper</groupId>
