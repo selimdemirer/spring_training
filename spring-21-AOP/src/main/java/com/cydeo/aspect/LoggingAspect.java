@@ -61,7 +61,7 @@ public class LoggingAspect {
 //    }
 
 
-        // ANNOTATION EXAMPLE
+        // @ANNOTATION EXAMPLE
 
 //    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)") // It only cares "DeleteMapping" methods
 //    public void anyDeleteControllerOperation() {}
@@ -73,7 +73,7 @@ public class LoggingAspect {
 //    }
 
 
-        // CUSTOM ANNOTATION EXAMPLE : You can define your methods using only one annotation => @LoggingAnnotation
+        // CUSTOM @ANNOTATION EXAMPLE : You can define your methods using only one annotation => @LoggingAnnotation
 
 //    @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
 //    public void loggingAnnotationPC() {}
@@ -85,7 +85,7 @@ public class LoggingAspect {
 //    }
 
 
-        // CUSTOM ANNOTATION WITH "AFTER RETURNING" EXAMPLES
+        // @ANNOTATION WITH "AFTER RETURNING" EXAMPLES
 
 //    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)") // It only cares "GetMapping" methods
 //    public void afterReturningGetMappingAnnotation() {}
@@ -104,7 +104,7 @@ public class LoggingAspect {
     List<CourseDTO> -> List<Object>     --> This is not ok    */
 
 
-            // CUSTOM ANNOTATION WITH "AFTER THROWING" EXAMPLE
+        // @ANNOTATION WITH "AFTER THROWING" EXAMPLE
 
 //    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)") // It only cares "GetMapping" methods
 //    public void afterReturningGetMappingAnnotation() {}
@@ -116,7 +116,7 @@ public class LoggingAspect {
 //    }
 
 
-        // CUSTOM ANNOTATION WITH "AROUND" EXAMPLE
+        // CUSTOM @ANNOTATION WITH "AROUND" EXAMPLE
 
     @Pointcut("@annotation(com.cydeo.annotation.LoggingAnnotation)")
     public void loggingAnnotationPC() {}
@@ -124,10 +124,10 @@ public class LoggingAspect {
     @Around("loggingAnnotationPC()")
     public Object anyLoggingAnnotationOperation(ProceedingJoinPoint proceedingJoinPoint) {
 
-        logger.info("Before -> Method: {} - Parameter {}"
-                , proceedingJoinPoint.getSignature().toShortString(), proceedingJoinPoint.getArgs());
+        // Before Part!
+        logger.info("Before -> Method: {} - Parameter {}", proceedingJoinPoint.getSignature().toShortString(), proceedingJoinPoint.getArgs());
 
-        Object result = null;
+        Object result = null; //
 
         try {
             result = proceedingJoinPoint.proceed();
@@ -135,8 +135,9 @@ public class LoggingAspect {
             throwable.printStackTrace();
         }
 
-        logger.info("After -> Method: {} - Result: {}"
-                , proceedingJoinPoint.getSignature().toShortString(), result.toString());
+        // After Part!
+        logger.info("After -> Method: {} - Result: {}", proceedingJoinPoint.getSignature().toShortString(), result.toString());
+
         return result;
 
     }
