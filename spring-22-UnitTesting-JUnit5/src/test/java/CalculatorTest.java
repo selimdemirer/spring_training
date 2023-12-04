@@ -1,14 +1,46 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
+import java.nio.file.AccessDeniedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
+    @BeforeAll
+    static void setUpAll() { // has to be static
+        System.out.println("BeforeAll is executed.");
+    }
+
+    @AfterAll
+    static void tearDownAll() { // has to be static
+        System.out.println("AfterAll is executed.");
+    }
+
+    @BeforeEach
+    void setUpEach() {
+        System.out.println("BeforeEach is executed.");
+    }
+
+    @AfterEach
+    void tearDownEach() {
+        System.out.println("AfterEach is executed.");
+    }
+
     @Test
+    @DisplayName("MyMethod")
     void add() {
         System.out.println("Add method");
         int actual = Calculator.add(2,3);
         assertEquals(5,actual,"Test failed"); //expected first ; actual second
+    }
+
+    @Test
+    void add2() {
+        System.out.println("Add2 method");
+
+//        assertThrows(IllegalArgumentException.class, () -> Calculator.add2(3, 2));
+//        assertThrows(AccessDeniedException.class, () -> Calculator.add2(3, 2));
+        assertThrows(IllegalArgumentException.class, () -> Calculator.add2(2, 3));
     }
 
     @Test
@@ -58,6 +90,6 @@ class CalculatorTest {
     }
 
 
-
+// maven-surefire-plugin  -->  if you have maven installed your computer and if you have this plugin you can use terminal to test your codes
 
 }
