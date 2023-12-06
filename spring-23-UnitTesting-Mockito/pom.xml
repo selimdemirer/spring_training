@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>ticketing-project-data</artifactId>
+    <artifactId>spring-23-UnitTesting-Mockito</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ticketing-project-data</name>
-    <description>ticketing-project-data</description>
+    <name>spring-23-UnitTesting-Mockito</name>
+    <description>spring-23-UnitTesting-Mockito</description>
     <properties>
         <java.version>11</java.version>
     </properties>
