@@ -37,7 +37,7 @@ $(function() {
                     fontSize: 14,
                 }
             },
-            scales: {
+            scale: {
                 yAxes: [{
                     ticks: {
                         // Include a dollar sign in the ticks
